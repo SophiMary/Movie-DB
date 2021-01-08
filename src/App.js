@@ -2,19 +2,16 @@ import React from "react";
 import Header from "./Components/Header";
 import Movies from "./Components/Movies";
 import { Route, Switch } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+import TVShows from "./Components/TVShows";
 
-const useStyles = makeStyles({
-
-});
 
 export default function App() {
-  const classes = useStyles();
   return (
-    <div className={classes.container}>
+    <div>
       <Header />
       <Switch>
         <Route exact from="/Movie-DB/movies" component={Movies} />
+        <Route exact from="/Movie-DB/tv-shows" component={TVShows} />
       </Switch>
     </div>
   );

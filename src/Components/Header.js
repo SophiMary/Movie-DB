@@ -34,15 +34,6 @@ const useStyles = makeStyles(theme => ({
         textTransform: "none",
         whiteSpace: "nowrap",
     },
-    selectedItems: {
-        color: "#fff",
-        fontWeight: "600",
-        fontSize: "20px",
-        textTransform: "none",
-        borderBottom: "1px solid #fff",
-        borderRadius: "0",
-        whiteSpace: "nowrap",
-    },
     menuButton: {
         marginRight: theme.spacing(2),
         color: "white",
@@ -67,8 +58,6 @@ const Header = props => {
     const open = Boolean(anchorEl);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-    const [moviesSelected, setMoviesSelected] = React.useState(true)
-    const [showsSelected, setShowsSelected] = React.useState(false)
 
     const handleMenu = event => {
         setAnchorEl(event.currentTarget);
@@ -99,7 +88,7 @@ const Header = props => {
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
-                        <img className={classes.image} src={logo} alt="logo" onClick={() => { handleButtonClick("/Movie-DB/movies"); setMoviesSelected(true); setShowsSelected(false) }} />
+                        <img className={classes.image} src={logo} alt="logo" onClick={() => { handleButtonClick("/Movie-DB/movies")}} />
                         The Movie DB
                     </Typography>
                     {/* Menu Bar */}
@@ -143,14 +132,14 @@ const Header = props => {
                             // Nav Bar
                             <div className={classes.headerOptions}>
                                 <Button
-                                    className={moviesSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => { handleButtonClick("/Movie-DB/movies"); setMoviesSelected(true); setShowsSelected(false); }}
+                                    className={classes.navItems}
+                                    onClick={() => { handleButtonClick("/Movie-DB/movies")}}
                                 >
                                     Movies
                                 </Button>
                                 <Button
-                                    className={showsSelected ? classes.selectedItems : classes.navItems}
-                                    onClick={() => { handleButtonClick("/Movie-DB/tv-shows"); setMoviesSelected(false); setShowsSelected(true); }}
+                                    className={classes.navItems}
+                                    onClick={() => { handleButtonClick("/Movie-DB/tv-shows")}}
                                 >
                                     TV Shows
                                 </Button>
