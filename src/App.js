@@ -1,13 +1,21 @@
-import logo from './logo.svg';
+import React from "react";
+import Header from "./Components/Header";
+import Movies from "./Components/Movies";
+import { Route, Switch } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
 
-function App() {
+const useStyles = makeStyles({
+
+});
+
+export default function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+    <div className={classes.container}>
+      <Header />
+      <Switch>
+        <Route exact from="/Movie-DB/movies" component={Movies} />
+      </Switch>
     </div>
   );
 }
-
-export default App;
