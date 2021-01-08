@@ -10,6 +10,7 @@ import TVShows from "./Components/TVShows";
     <div>
       <Header />
       <Switch>
+        <Route exact from="/Movie-DB/" component={Movies} />
         <Route exact from="/Movie-DB/movies" component={Movies} />
         <Route exact from="/Movie-DB/tv-shows" component={TVShows} />
       </Switch>
