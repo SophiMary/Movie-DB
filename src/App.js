@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import TVShows from "./Components/TVShows";
 
 
-export default function App() {
+ const App = () => {
   return (
     <div>
       <Header />
@@ -16,3 +16,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App
